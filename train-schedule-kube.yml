@@ -29,7 +29,9 @@ spec:
       labels:
         app: train-schedule
     spec:
-      containers:
+     serviceAccountName: jenkins
+     automountServiceAccountToken: true
+     containers:
       - name: train-schedule
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
